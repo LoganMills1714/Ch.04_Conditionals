@@ -1,61 +1,60 @@
-# 4.0 Jedi Training (40pts)  Name:________________
-#Below each program list the mistakes found in comments.
+# 4.0 Jedi Training (40pts)  Name:Logan Mills
+# Below each program list the mistakes found in comments.
 
-  #1. Make the following program work. (3 mistakes)  (3pts)
+# 1. Make the following program work. (3 mistakes)  (3pts)
+
+midichlorians = float(input("Enter midichlorian count: "))  # Indentation, missing parenthesis
+
+if midichlorians > 10000:  # Missing colon
+    print("You have serious Jedi potential")
+else:  # Elif requires a condition
+    print("Jedi, you will never be.")
+
+
+# 2. Make the following program work. (3 mistakes)  (3pts)
      
-     midichlorians = float(input("Enter midichlorian count: ")
-     if midichlorians > 10000
-         print("You have serious Jedi potential")
-     elif:
-         print("Jedi, you will never be.")
+x = int(input("Enter a number: "))  # Missing int statement, indentation
+if x == 3:  # Missing colon, double equals sign
+    print("You entered 3")
 
 
- # 2. Make the following program work. (3 mistakes)  (3pts)
+# 3. Make the following program work. (4 mistakes)  (4pts)
      
-     x = input("Enter a number: ")
-     if x = 3
-         print("You entered 3")
+answer = input("What is the name of Poe Dameron's Droid? ")
+if answer == "BB8":  # Double equals, wrong variable, a is not defined
+    print("Correct!")
+else:  # Indent and colon
+    print("Incorrect! It is BB8.")
 
 
-  # 3. Make the following program work. (4 mistakes)  (4pts)
+# 4. Make the following program work. (4 mistakes) (4pts)
      
-     answer = input("What is the name of Poe Dameron's Droid? ")
-     if a = "BB8":
-         print("Correct!")
-         else
-         print("Incorrect! It is BB8.")
+jedi = input("Name one of the top 3 greatest Jedi.")  # Defined x but used variable jedi later
+if jedi == "Yoda" or jedi == "Luke Skywalker" or jedi == "Obi-Wan Kenobi":  # Has to be jedi == for each, quotes around strings
+    print("That is correct!")  # Missing quotes
 
-
-  # 4. Make the following program work. (4 mistakes) (4pts)
+# 5. Make the following program work whether they enter a, A, Jedi Master or jedi master
+#    Print "Not a choice!" if they don't choose any of the three and set sensitivity to blank text.  (6pts)
      
-     x = input("Name one of the top 3 greatest Jedi.")
-     if jedi == Yoda or Luke Skywalker or Obi-Wan Kenobi:
-         print "That is correct!"
+print("Welcome to the Jedi Academy!")
 
+print("A. Jedi Master")
+print("B. Sith Lord")
+print("C. Droid")
 
+user_input = input("Choose a character?")
+sensitivity = 0
 
- # 5. Make the following program work whether they enter a, A, Jedi Master or jedi master
- #    Print "Not a choice!" if they don't choose any of the three and set sensitivity to blank text.  (6pts)
-     
-     print("Welcome to the Jedi Academy!")
+if user_input.lower() == "a":  # .lower() to get both a and A, strings need quotes, double quotes
+    sensitivity = 1000
+elif user_input.lower() == "b":  # elif not else if
+    sensitivity = 900
+elif user_input.lower() == "c":
+    sensitivity = 0
+else:
+    print("Not a choice")  # Added error catch
 
-     print("A. Jedi Master")
-     print("B. Sith Lord")
-     print("C. Droid")
-
-     user_input = input("Choose a character?")
-
-     if user_input = A:
-         sensitivity = 1000
-     else if user_input = B:
-         sensitivity = 900
-     else if user_input = C:
-         sensitivity = 0
-
-     print("Sensitivity: ",Sensitivity)
-
-
-
+print("Sensitivity: ", sensitivity)  # Add , sensitivity to print sensitivity, define sensitivity earlier to prevent undefined errors
 
 '''
 6. NUMBER ANALYSIS PROGRAM  (10pts)
@@ -78,9 +77,27 @@ Out:  Test 1: Odd
       Test 3: Exclusive
 '''
 
+number = int(input("Choose a number: "))
 
+# Test 1
+if number % 2 == 1:
+    print("Test 1: Odd")
+else:
+    print("Test 1: Even")
 
+# Test 2
+if number > 0:
+    print("Test 2: Positive")
+elif number < 0:
+    print("Test 2: Negative")
+else:
+    print("Test 2: Zero")
 
+# Test 3
+if -100 <= number <= 100:
+    print("Test 3: Inclusive")
+else:
+    print("Test 3: Exclusive")
 
 '''
 GRADING 2.0    (10pts)
@@ -89,4 +106,26 @@ Copy your Grading 1.0 program below and then modify it to also print out the let
 If they fail, tell them to "Transfer to Johnston!"
 '''
 
+sem = float(input("What is your semester grade? "))
+fin = float(input("What is your final exam grade? "))
+wor = float(input("How much is your final worth? "))
 
+semwor = 100 - wor
+semwor /= 100
+sem *= semwor
+wor /= 100
+fin *= wor
+overall = fin + sem
+
+print("Your overall grade is", overall)
+
+if overall >= 90:
+    print("Your letter grade is A")
+if overall >= 80:
+    print("Your letter grade is B")
+if overall >= 70:
+    print("Your letter grade is C")
+if overall >= 60:
+    print("Your letter grade is D")
+if overall >= 50:
+    print("Your letter grade is F, you should transfer to Johnston")
