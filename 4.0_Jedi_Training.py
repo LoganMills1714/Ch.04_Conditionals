@@ -121,11 +121,11 @@ print("Your overall grade is", overall)
 
 if overall >= 90:
     print("Your letter grade is A")
-if overall >= 80:
+elif overall >= 80:
     print("Your letter grade is B")
-if overall >= 70:
+elif overall >= 70:
     print("Your letter grade is C")
-if overall >= 60:
+elif overall >= 60:
     print("Your letter grade is D")
-if overall >= 50:
-    print("Your letter grade is F, you should transfer to Johnston")
+else:
+    print("Your letter grade if F, you should transfer to Johnston")
